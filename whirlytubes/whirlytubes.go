@@ -36,4 +36,6 @@ func (addr TcpAddress) Receive() (msg string, err error) {
 	if err != nil {
 		return "", err
 	}
+	msg, err := bufio.NewReader(conn).ReadString('\n')
+	return
 }
